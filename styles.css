@@ -7,6 +7,10 @@
     font-family: Poppins;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+  }
+
 body {
     background: #000;
     overflow: hidden;
@@ -15,6 +19,14 @@ body {
 .container {
     display: flex;
 }
+
+.right::-webkit-scrollbar {
+    display: none;
+  }
+
+.content-box::-webkit-scrollbar {
+    display: none;
+  }
 
 .left-box-1 {
     width: 23vw;
