@@ -1,16 +1,7 @@
 const greeting = document.querySelector(".greeting");
 let songs = document.querySelectorAll(".playSong");
 
-document.getElementById('next').addEventListener('click', nextSong)
-document.getElementById('prev').addEventListener('click', prevSong)
-// seek-time update
-audio.addEventListener('timeupdate', (e) => {
-  let currentTime =  (e.target.currentTime/e.target.duration) * 100;
-  range = document.querySelector('#range')
-  range.value = currentTime
-  document.getElementById('initialTime').innerText = secToMin(e.target.currentTime)
-})
-document.querySelector('#range').addEventListener('input', seekTo)
+
 
 const hour = new Date().getHours();
 const welcomeTypes = ["Good morning", "Good afternoon", "Good evening"];
@@ -81,6 +72,16 @@ else if (hour < 18) welcomeText = welcomeTypes[1];
 else welcomeText = welcomeTypes[2];
 greeting.innerHTML = welcomeText;
 
+document.getElementById('next').addEventListener('click', nextSong)
+document.getElementById('prev').addEventListener('click', prevSong)
+// seek-time update
+audio.addEventListener('timeupdate', (e) => {
+  let currentTime =  (e.target.currentTime/e.target.duration) * 100;
+  range = document.querySelector('#range')
+  range.value = currentTime
+  document.getElementById('initialTime').innerText = secToMin(e.target.currentTime)
+})
+document.querySelector('#range').addEventListener('input', seekTo)
 
 audio.onloadedmetadata = function() {
   document.getElementById('finalTime').innerText = secToMin(audio.duration)
