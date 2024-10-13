@@ -5,9 +5,6 @@ const hour = new Date().getHours();
 const welcomeTypes = ["Good morning", "Good afternoon", "Good evening"];
 let welcomeText = "";
 
-
-
-
 songDict = {
   "Tu Hai Kahan": [
     "Tu Hai Kahan",
